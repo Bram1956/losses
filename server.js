@@ -16,7 +16,7 @@ const Product = require('./Models/product')
 const methodOverride = require('method-override')
 
 //Database
-mongoose.connect('mongodb://127.0.0.1:27017/joseph', {
+mongoose.connect(process.env.DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
