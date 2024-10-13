@@ -1,6 +1,5 @@
 //Handling user login
 const login = (req, res) => {
-    console.log(req.body)
     const { username, password } = req.body
     try {
         // check if the user exists

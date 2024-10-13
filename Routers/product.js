@@ -5,7 +5,6 @@ const { sessionChecker } = require('../Middleware/auth')
 
 
 router.post('/add', async (req, res) => {
-    console.log(req.body)
     const { product, quantity, customer, phoneNumber } = req.body
     try {
         const newproduct = await Product.create({ product, quantity, customer, phoneNumber });
