@@ -35,7 +35,13 @@ app.use(session({
     secret: process.env.JWT_SECRET,
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create(options)
+    store: MongoStore.create({
+        mongoUrl: process.env.DB_URL,
+        touchAfter: 24 * 60 * 60,
+        crypto: {
+            secret: process.env.JWT_SECRET
+        }
+    })
 }));
 app.use(flash());
 app.use(express.static(path.join(__dirname, "public")));
