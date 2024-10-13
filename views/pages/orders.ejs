@@ -1,0 +1,37 @@
+<%- layout('/layouts/boilerplate') %>
+
+    <h3>All orders Throughout the Week</h3>
+    <div class="container">
+        <div class="box">
+
+            <%results.forEach((result)=>{ %>
+
+                <div class="card mb-3" style="width: 20rem;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <b>Product:</b>
+                            <%= result.product %>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Quantity:</b>
+                            <%= result.quantity %>
+                        </li>
+
+
+                        <li class="list-group-item">
+                            <b>Customer Name:</b>
+                            <%= result.customer %>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Customer PhoneNumber:</b>
+                            <%= result.phoneNumber %>
+                        </li>
+                        <li class="list-group-item">
+                            <form method="post" action="api/products/delete/<%=result._id%>?_method=DELETE">
+                                <button class="btn btn-danger" type="submit">Delete</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <% }) %>
+        </div>

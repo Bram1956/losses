@@ -1,0 +1,34 @@
+<%- layout('/layouts/boilerplate') %>
+    <form action="api/products/add" method="post">
+        <div class="mb-3">
+            <div id="text" class="form-text">Chagua yako mkubwa.</div>
+            <select class="form-select product" aria-label="Default select example" required name="product">
+                <!-- <option selected>Open this select menu</option> -->
+                <option value="GroundNuts">GroundNuts</option>
+                <option value="Mabuyu">Mabuyu</option>
+                <option value="Sweets">Sweets</option>
+            </select>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control quantity" id="quantity" name="quantity">
+            <div id="text" class="form-text">Idadi ya kushibisha.</div>
+        </div>
+        <div class="mb-3">
+            <label for="customer " class="form-label">Customer</label>
+            <input type="customer" class="form-control customer" id="customer" name="customer">
+            <div id="text" class="form-text">Jina ya Mkuu</div>
+        </div>
+        <div class="mb-3">
+            <label for="phoneNumber " class="form-label">phoneNumber</label>
+            <input type="phoneNumber" class="form-control phoneNumber" id="phoneNumber" name="phoneNumber">
+            <div id="number" class="form-text">Digits 071...</div>
+        </div>
+        <div id="liveAlertPlaceholder">
+            <button type="submit" class="btn btn-primary" id="liveAlertBtn">Submit</button>
+        </div>
+    </form>
