@@ -7,6 +7,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 const engine = require('ejs-mate');
 const path = require('path')
@@ -34,6 +35,7 @@ app.use(session({
     secret: process.env.JWT_SECRET,
     resave: false,
     saveUninitialized: false,
+    store: MongoStore.create(options)
 }));
 app.use(flash());
 app.use(express.static(path.join(__dirname, "public")));
