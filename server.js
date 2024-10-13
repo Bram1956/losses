@@ -49,27 +49,27 @@ app.set("views", path.join(__dirname, "views"));
 // error handlers
 
 // development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-    app.use(function (err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}
+// // will print stacktrace
+// if (app.get('env') === 'development') {
+//     app.use(function (err, req, res, next) {
+//         res.status(err.status || 500);
+//         res.render('error', {
+//             message: err.message,
+//             error: err
+//         });
+//     });
+// }
 
-// production error handler
-// no stacktraces leaked to user
-app.use(function (err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
-});
-//API call
+// // production error handler
+// // no stacktraces leaked to user
+// app.use(function (err, req, res, next) {
+//     res.status(err.status || 500);
+//     res.render('error', {
+//         message: err.message,
+//         error: {}
+//     });
+// });
+// //API call
 app.use('/api/admin', auth)
 app.use('/api/products', product)
 
